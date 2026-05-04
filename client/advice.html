@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Совет дня</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 50px; }
+        .advice { font-size: 24px; color: #333; margin: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Совет дня</h1>
+    <div id="advice" class="advice">Загрузка...</div>
+    
+    <script>
+        const advices = [
+            "Пейте больше воды!",
+            "Сделайте перерыв и прогуляйтесь",
+            "Улыбнитесь кому-нибудь сегодня",
+            "Планируйте свой день заранее",
+            "Продолжите читать ту книгу"
+        ];
+        
+        const randomAdvice = advices[Math.floor(Math.random() * advices.length)];
+        document.getElementById('advice').textContent = randomAdvice;
+    </script>
+</body>
+</html>

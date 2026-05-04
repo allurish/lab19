@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Факты о животных</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 50px; }
+        .fact { font-size: 20px; color: #555; margin: 20px; line-height: 1.6; }
+        button { background: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Интересные факты о животных</h1>
+    <div id="fact" class="fact"></div>
+    <button onclick="showRandomFact()">Новый факт</button>
+    
+    <script>
+        const facts = [
+            "У осьминога три сердца!",
+            "Слоны — единственные млекопитающие, которые не умеют прыгать",
+            "Страусы бегают быстрее лошадей",
+            "У кошек более 100 голосовых звуков",
+            "Дельфины дают друг другу имена"
+        ];
+        
+        function showRandomFact() {
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById('fact').textContent = randomFact;
+        }
+        
+        showRandomFact();
+    </script>
+</body>
+</html>

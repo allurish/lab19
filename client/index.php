@@ -82,7 +82,7 @@
     </div>
 
     <script>
-        const API_BASE = 'http://api.ponka.ru';
+        const API_BASE = 'http://api.alekseeva.net';
         
         async function testAPI(endpoint) {
             try {

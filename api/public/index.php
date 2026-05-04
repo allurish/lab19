@@ -1,8 +1,6 @@
 <?php
 require_once 'config.php';
 require_once 'functions.php';
-
-// Создание тестовой таблицы
 $pdo->exec("
     CREATE TABLE IF NOT EXISTS records (
         id SERIAL PRIMARY KEY,
@@ -17,14 +15,12 @@ $action = $_GET['action'] ?? '';
 
 switch ($action) {
     case 'all':
-        // GET - получение всех записей
         $stmt = $pdo->query("SELECT * FROM records ORDER BY id");
         $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
         sendResponse(['success' => true, 'data' => $records]);
         break;
         
     case 'get':
-        // GET - получение записи по id
         if (!isset($_GET['id'])) {
             sendResponse(['error' => 'Parameter "id" is required'], 400);
         }
@@ -42,7 +38,6 @@ switch ($action) {
         break;
         
     case 'del':
-        // GET - удаление записи по id
         if (!isset($_GET['id'])) {
             sendResponse(['error' => 'Parameter "id" is required'], 400);
         }
@@ -60,7 +55,6 @@ switch ($action) {
         break;
         
     case 'edit':
-        // POST - изменение записи
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             sendResponse(['error' => 'Method not allowed. Use POST'], 405);
         }
